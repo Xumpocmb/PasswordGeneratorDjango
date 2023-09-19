@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<div class="container text-center">
+    <h1>PASSWORD GENERATOR</h1>
+    <form action="{% url 'password' %}">
+        <div>
+        <label for="length">length</label>
+        <select name="length" id="length">
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12" selected="selected">12</option>
+            <option value="14">14</option>
+        </select>
+        </div>
+        <div>
+            <label for="digits">digits</label>
+            <input type="checkbox" name="digits" id="digits">
+        </div>
+        <div>
+            <label for="special">special</label>
+            <input type="checkbox" name="special" id="special">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Generate">
+    </form>
+    <div>
+        <a href="{% url 'about' %}">About</a>
+    </div>
+</div>
+
+</body>
+</html>
